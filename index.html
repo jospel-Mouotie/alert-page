@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadgets Industries</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        
+        :root {
+            --primary-color: #11a7e2;
+            --secondary-color: #4e4376;
+            --accent-color: #3f8ff7;
+            --light-color: #f5f7fa;
+        }
+    
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #bec6c9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(88, 245, 114, 0.2);
+            position: relative;
+        }
+        
+        .logo {
+            height: 80px;
+            margin-right: 20px;
+        }
+        
+        .welcome-sticker {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #03ff57;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .maintenance-banner {
+            background-color: #fff8e1;
+            border-left: 5px solid orange;
+            padding: 20px;
+            margin: 40px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        p {
+            color: black;
+        }
+
+        .maintenance-banner::after {
+            content: "⚠️";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+        }
+        
+        .welcome-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background-color: white;
+        }
+        
+        .welcome-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #017add;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background: linear-gradient(to right, var(--accent-color), #005bea);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .contact-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(215, 222, 223, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .contact-btn:hover::before {
+            left: 100%;
+        }
+        
+        .services-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #017add;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: #03ff57;
+            margin: 15px auto;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            border-color: #03ff57;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            color: var(--accent-color);
+        }
+        
+        .service-card p {
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        
+        .sticker {
+            position: fixed;
+            font-size: 1.5rem;
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .sticker:nth-child(1) {
+            top: 20%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+        
+        .sticker:nth-child(2) {
+            top: 60%;
+            left: 10%;
+            animation-delay: 1s;
+        }
+        
+        .sticker:nth-child(3) {
+            top: 30%;
+            right: 5%;
+            animation-delay: 2s;
+        }
+        
+        .sticker:nth-child(4) {
+            top: 70%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+           
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            
+          <center>
+              <h1>Bienvenu chez  <br> <span style="color:#007a29; font-size: 30px;">GADGETS</span> <span style="color: #017add; font-size: 30px;">INDUSTRIES   SARL</h1>
+            
+          </center>
+        </header>
+        
+        <div class="maintenance-banner">
+           <center> <h2> Nous sommes actuelement en maintenance...</h2></center>
+           <center><p style="font-size: 20px;">Nous améliorons notre site pour mieux vous servir. Merci pour votre compréhension.</p></center>
+        </div>
+        
+        <section class="welcome-section">
+            <h2>Contacts</h2>
+        
+            <span>
+                <a href="#" class="contact-btn"> +237 657-896-180</a>
+                 <a href="#" class="contact-btn"> +237 677 896-518</a>
+                  <a href="#" class="contact-btn"> +237 694-952-198</a>
+            </span>
+            <a href="mailto:gadgetsindustrie@gmail.com" class="contact-btn"> contacter par e-mail</a>
+        </section>
+         <h2> <center style="color: #03ff57;"> nous fournissons </center></h2>
+        <!-- Section Informatique -->
+        <section class="services-section">
+            <h2 class="section-title">Services Informatiques</h2>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Développement Web et Mobile</h3>
+                    <p>Création d'applications web et mobiles sur mesure pour répondre à vos besoins spécifiques avec des solutions innovantes et performantes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Maintenance Électronique</h3>
+                    <p>Diagnostic, réparation et maintenance de tous vos équipements électroniques avec une expertise technique de pointe.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Sécurité et Cybersécurité</h3>
+                    <p>Protection de vos systèmes informatiques contre les cybermenaces avec des solutions de sécurité adaptées à votre entreprise.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Industrielle -->
+        <section class="services-section">
+           
+            <h2 class="section-title">Services Industriels</h2>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">☀️</div>
+                    <h3>Installations Photovoltaïques et Thermiques</h3>
+                    <p>Conception et installation de systèmes solaires photovoltaïques et thermiques pour une énergie propre et renouvelable.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3>Froid et Climatisation Industrielle</h3>
+                    <p>Solutions complètes pour vos besoins en froid industriel et climatisation avec des systèmes performants et économes en énergie.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Étude, Conception et Montage Électromécanique</h3>
+                    <p>De l'étude à la réalisation, nous concevons et installons vos systèmes électromécaniques sur mesure.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Électrohydraulique et Mécanisation Pneumatique</h3>
+                    <p>Solutions avancées en électrohydraulique et systèmes pneumatiques pour vos applications industrielles.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔋</div>
+                    <h3>Électropneumatique et Mécanisation Hydraulique</h3>
+                    <p>Intégration de systèmes électropneumatiques et hydrauliques pour automatiser vos processus industriels.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>Automatisme et Instrumentation Industrielle</h3>
+                    <p>Conception et mise en œuvre de systèmes automatisés avec instrumentation précise pour optimiser vos productions.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Maintenance d'Équipement Industriel</h3>
+                    <p>Services de maintenance préventive et corrective pour assurer la continuité et l'efficacité de vos opérations.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Électricité Industrielle et Tertiaire</h3>
+                    <p>Solutions électriques sur mesure pour vos installations industrielles et bâtiments tertiaires.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Bilan Énergétique</h3>
+                    <p>Analyse complète de votre consommation énergétique avec des recommandations pour réduire vos coûts.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>Solutions Éco-énergétiques</h3>
+                    <p>Mise en place de technologies vertes pour une production plus durable et respectueuse de l'environnement.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2017 Gadgets Industries. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
