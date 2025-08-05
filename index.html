@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadgets Industries Sarl - Solutions Industrielles et Informatiques au Cameroun</title>
+    
+    <meta name="description" content="Gadgets Industries Sarl est votre partenaire pour des solutions sur mesure au Cameroun. Nous offrons des services en développement web, maintenance électronique, installations solaires, froid industriel et électricité industrielle.">
+    
+    <meta name="keywords" content="Gadgets Industries Sarl, Douala, Cameroun, solutions industrielles, services informatiques, développement web, maintenance électronique, cybersécurité, installations photovoltaïques, électricité industrielle, climatisation industrielle, froid, conception électromécanique">
+    
+    <meta name="author" content="Gadgets Industries Sarl">
+
+    <link rel="icon" href="https://www.gadgets-industrie.com/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #007a29; /* Vert foncé */
+            --secondary-color: #017add; /* Bleu */
+            --text-color: #333333;
+            --background-color: #ffffff;
+            --light-bg-color: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 20px;
+            background-color: var(--background-color);
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .logo {
+            height: 80px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .logo-text p {
+            margin: 5px 0 0;
+            font-style: italic;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+        
+        .maintenance-banner {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            margin: 40px 0;
+            border: 1px solid #ffeeba;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .maintenance-banner h2 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+            color: #856404;
+        }
+
+        .maintenance-banner p {
+            margin: 0;
+            font-size: 1rem;
+            color: #856404;
+        }
+        
+        .contact-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 25px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .contact-btn.mail {
+            background-color: var(--primary-color);
+        }
+
+        .contact-btn.mail:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .services-section {
+            margin: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--background-color);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-top: 0;
+            color: var(--text-color);
+        }
+        
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            background-color: var(--primary-color);
+            color: var(--light-bg-color);
+        }
+
+        footer p {
+            margin: 0;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .logo-text h1 {
+                font-size: 2rem;
+            }
+            .logo-text p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.PNG" alt="Logo de Gadgets Industries Sarl" class="logo">
+                <div class="logo-text">
+                    <h1>GADGETS INDUSTRIES SARL</h1>
+                    <p>"Des solutions de qualité sur mesure"</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="maintenance-banner">
+            <h2>Nous sommes actuellement en maintenance...</h2>
+            <p>Notre site web est en cours d'amélioration pour mieux vous servir. En attendant, n'hésitez pas à nous contacter directement pour tous vos besoins.</p>
+        </section>
+        
+        <section class="contact-section">
+            <h2>Contactez-nous directement</h2>
+            <div class="contact-buttons">
+                <a href="tel:+237657896180" class="contact-btn">+237 657-896-180</a>
+                <a href="tel:+237677896518" class="contact-btn">+237 677-896-518</a>
+                <a href="tel:+237694952198" class="contact-btn">+237 694-952-198</a>
+                <a href="mailto:gadgetsindustrie@gmail.com" class="contact-btn mail">Contact par e-mail</a>
+            </div>
+        </section>
+
+        <section class="services-section">
+            <h2 class="section-title">Nos Services</h2>
+            <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: #555;">Nous fournissons des solutions complètes et sur mesure dans les domaines industriels et informatiques au Cameroun.</p>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Développement Web et Mobile</h3>
+                    <p>Création d'applications web et mobiles sur mesure pour répondre à vos besoins spécifiques avec des solutions innovantes et performantes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Maintenance Électronique</h3>
+                    <p>Diagnostic, réparation et maintenance de tous vos équipements électroniques avec une expertise technique de pointe.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>Sécurité et Cybersécurité</h3>
+                    <p>Protection de vos systèmes informatiques contre les cybermenaces avec des solutions de sécurité adaptées à votre entreprise.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">☀️</div>
+                    <h3>Installations Photovoltaïques et Thermiques</h3>
+                    <p>Conception et installation de systèmes solaires photovoltaïques et thermiques pour une énergie propre et renouvelable.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">❄️</div>
+                    <h3>Froid et Climatisation Industrielle</h3>
+                    <p>Solutions complètes pour vos besoins en froid industriel et climatisation avec des systèmes performants et économes en énergie.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📐</div>
+                    <h3>Étude, Conception et Montage Électromécanique</h3>
+                    <p>De l'étude à la réalisation, nous concevons et installons vos systèmes électromécaniques sur mesure.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Électrohydraulique et Mécanisation Pneumatique</h3>
+                    <p>Solutions avancées en électrohydraulique et systèmes pneumatiques pour vos applications industrielles.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Électricité Industrielle et Tertiaire</h3>
+                    <p>Solutions électriques sur mesure pour vos installations industrielles et bâtiments tertiaires.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Bilan Énergétique</h3>
+                    <p>Analyse complète de votre consommation énergétique avec des recommandations pour réduire vos coûts.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2017 Gadgets Industries SARL. Tous droits réservés.</p>
+            <p>"Des solutions de qualité sur mesure"</p>
+        </div>
+    </footer>
+</body>
+</html>
